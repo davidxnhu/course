@@ -1,0 +1,13 @@
+get_page()
+string.find()
+
+list.append()
+element in list
+list.index()
+
+for element in list:
+
+list.pop()
+
+
+time.clock()

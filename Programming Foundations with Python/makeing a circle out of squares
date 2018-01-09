@@ -1,0 +1,53 @@
+import turtle
+
+def draw_square(some_turtle,length):
+    for i in range (1,5):
+        some_turtle.forward(length)
+        some_turtle.right(90)
+
+def helper (some_turtle,length):
+    some_turtle.forward(length/2)
+    some_turtle.setposition(0,0)
+    some_turtle.left(90)
+    some_turtle.forward(length/2)
+    some_turtle.backward(length)
+    some_turtle.setposition(0,0)
+    some_turtle.right(90)
+
+def draw_art(length,number):
+    window=turtle.Screen()
+    window.bgcolor('red')
+
+    start=turtle.Turtle()
+    start.shape('classic')
+    start.penup()
+    start.setposition(0,-length/2)
+    start.pendown()
+    start.circle(length/2)
+    start.penup()
+    start.setposition(0,0)
+    start.pendown()
+
+    start.speed(10)
+    for i in range(0,number):
+        # fill in the circle first
+        helper(start,length)
+
+
+        # move to the start of the square        
+        start.backward(length/2)
+        start.left(90)
+        start.forward(length/2)
+        start.right(90)
+        draw_square(start,length)
+        start.penup()
+        start.setposition(0,0)
+        start.pendown()
+        start.right(90.0/number)
+
+    
+
+    window.exitonclick()
+
+
+draw_art(200,15)

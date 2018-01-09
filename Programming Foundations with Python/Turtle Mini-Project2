@@ -1,0 +1,62 @@
+import turtle
+
+def draw_triangle(some_turtle,length):
+    some_turtle.fillcolor('green')
+    some_turtle.begin_fill()
+    for i in range(0,3):
+        some_turtle.forward(length)
+        some_turtle.left(120)
+    some_turtle.end_fill()
+
+
+def move_back_turtle(some_turtle,length,step):
+    some_turtle.penup()
+    some_turtle.backward(step*length)
+    some_turtle.left(60)
+    some_turtle.forward(length)
+    some_turtle.right(60)
+    some_turtle.pendown()
+
+def draw_big_triangle(some_turtle,length):
+    #first line
+    for i in range (0,4):
+        draw_triangle(some_turtle,length)
+        some_turtle.forward(length)
+        
+    #second line
+    move_back_turtle(some_turtle,length,4)
+
+    draw_triangle(some_turtle,length)
+    some_turtle.penup()
+    some_turtle.forward(2*length)
+    some_turtle.pendown()
+    draw_triangle(some_turtle,length)
+
+    #third line
+    move_back_turtle(some_turtle,length,2)
+    for i in range (0,2):
+        draw_triangle(some_turtle,length)
+        some_turtle.forward(length)
+        
+    #fourth line
+    move_back_turtle(some_turtle,length,2)
+    draw_triangle(some_turtle,length)
+
+def draw_art(some_turtle,length):
+    draw_big_triangle(some_turtle,length/4.0)
+    move_back_turtle(some_turtle,length/4.0,0) 
+    
+    draw_big_triangle(some_turtle,length/4.0)
+    some_turtle.right(120)
+    some_turtle.forward(1.75*length)
+    some_turtle.left(120)
+    some_turtle.forward(length)
+    draw_big_triangle(some_turtle,length/4.0)
+    
+window=turtle.Screen()
+brad=turtle.Turtle()
+brad.speed(20)
+draw_art(brad,40)
+window.exitonclick()
+
+    

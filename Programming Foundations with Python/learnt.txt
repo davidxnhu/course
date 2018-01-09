@@ -1,0 +1,23 @@
+time.ctime()
+time.sleep(x)
+
+os.rename(oldname,newname)
+
+file_name.translate(None,"1234567890")
+
+save_path=os.getcwd()
+
+os.chdir('xxxxx')
+
+window=turtle.Screen() # show a window
+windos.bgcolor("red")
+
+brad=turtle.Tultle()
+brad.forward(100)
+
+
+quotes=open("D:\....")
+contents_of_file=quote.read()
+
+quotes.close()
+connection=urllib.urlopen("http://...........")
