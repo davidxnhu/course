@@ -1,3 +1,3 @@
 # course
 
-Online courses
+Online Udacity courses on Python
